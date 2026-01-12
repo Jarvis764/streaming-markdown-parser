@@ -16,7 +16,6 @@ A real-time **streaming Markdown parser** built with **TypeScript**, designed to
 
 ## 📸 Demo
 
-The demo simulates an LLM stream by splitting Markdown into random chunks and rendering them in real time.
 
 > Open `dist/index.html` and click **STREAM** to see it in action.
 
@@ -40,16 +39,24 @@ The demo simulates an LLM stream by splitting Markdown into random chunks and re
 
 ## 🧠 Architecture Overview
 
-### Streaming State Machine
+## 🔁 Streaming State Machine
 
 The parser processes **one character at a time**, maintaining global state across streamed tokens.
 
+```text
 NORMAL
-├─ → INLINE_CODE │ └─ → NORMAL
-├─ → CODE_BLOCK │ └─ → NORMAL
-├─ * → ITALIC
-├─ ** → BOLD
-└─ \n → LINE PROCESSING (headings, lists, paragraphs)
+ ├── `        → INLINE_CODE
+ │               └── `        → NORMAL
+ │
+ ├── ```      → CODE_BLOCK
+ │               └── ```      → NORMAL
+ │
+ ├── *        → ITALIC
+ ├── **       → BOLD
+ │
+ └── \n       → LINE PROCESSING
+                  (headings, lists, paragraphs)
+```
 
 
 ---
@@ -70,19 +77,20 @@ NORMAL
 
 ---
 
+
 ## 📁 Project Structure
 
-
-
+```text
 ├── src/
-│ └── MarkdownParser.ts # Core streaming parser logic
+│   └── MarkdownParser.ts   # Core streaming parser logic
 ├── public/
-│ └── index.html # Demo HTML
-├── dist/ # Compiled JavaScript output
+│   └── index.html          # Demo HTML
+├── dist/                   # Compiled JavaScript output
 ├── package.json
 ├── tsconfig.json
 └── README.md
 
+```
 
 ---
 
