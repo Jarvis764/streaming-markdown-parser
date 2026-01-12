@@ -110,7 +110,7 @@ Development mode (watch)
 npm run dev
 ```
 
-🧪 How Streaming Is Simulated
+## 🧪 How Streaming Is Simulated
 
 The demo mimics LLM behavior by:
 
@@ -129,17 +129,19 @@ Token 3: "t clo"
 
 The parser still correctly renders a code block.
 
-🎨 Styling Notes
-Element	Style
-Inline Code	Light background, rounded corners
-Code Blocks	Dark background, monospace
-Headings	Scaled font sizes
-Bold	font-weight: 700
-Italic	font-style: italic
+## 🎨 Styling Notes
+| Element     | Style                             |
+| ----------- | --------------------------------- |
+| Inline Code | Light background, rounded corners |
+| Code Blocks | Dark background, monospace        |
+| Headings    | Scaled font sizes                 |
+| Bold        | `font-weight: 700`                |
+| Italic      | `font-style: italic`              |
+
 
 Styling is intentionally minimal; focus is on parsing logic.
 
-📈 Performance Characteristics
+## 📈 Performance Characteristics
 
 Time Complexity: O(n)
 
@@ -149,7 +151,7 @@ Reflows: None (append-only)
 
 Memory: Constant extra space
 
-🎯 Scope & Limitations
+## 🎯 Scope & Limitations
 
 ✔ Optimized for streaming correctness
 
